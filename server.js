@@ -18,6 +18,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //connect to mongoose here
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
+
+mongoose.connect(MONGODB_URI,{
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
+//mongo string add PW and db name then add this to heroku key page config vars (under settings), can delete this after heroku. currently under rocky stream will need to add to new deployment
+//mongodb+srv://ahfitnesstracker2:<LZr1fTGC0Jd9SSdG>@cluster0.jjzdr.mongodb.net/<workout_db>?retryWrites=true&w=majority
 
 //routes
 app.use("/api", require("./routes/api-routes.js"));
