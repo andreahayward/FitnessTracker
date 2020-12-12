@@ -10,7 +10,7 @@ const app = express();
 const db = require("./models");
 
 //databaseName
-const database = "workout_db"
+//const database = "workout_db"
 
 app.use(logger("dev"));
 app.use(express.static("public")); 

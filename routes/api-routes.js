@@ -47,12 +47,12 @@ router.post("/workouts", ({ body }, res) => {
             res.json(err);
         });
 
-    res.send('Got a POST request')
+    //res.send('Got a POST request')
 });
 
 //get range
 router.get("/workouts/range", (req, res) => {
-    db.Workout.find({}).limit(7)
+    db.Workout.find({})
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
